@@ -310,6 +310,7 @@
                 </label>
 
                 <label class="input_list no_line phone_code unfind_flex">
+                    <p style="color: #ababab">验证码</p>
                     <input type="number" pattern="[0-9]*" oninput="if(value.length>6)value=value.slice(0,6)" placeholder="请输入验证码" class="identifying_code message_input">
 
                     <span class="code_send">获取验证码</span>
@@ -404,7 +405,7 @@
         });
 
     },false)
-    //loading动画,10s后会自动移除
+    /*//loading动画,10s后会自动移除
     jfShowTips.loadingShow({
         "text":"<span class='bank_card_lod_text'>请先完成提额认证<!--<span>跳转中</span>--></span>"
     })
@@ -416,7 +417,7 @@
 
         window.location.href="../certification/main.html"
 
-    },20000)
+    },20000)*/
     $(document).ready(function(){
         var max_money = $('#borrow_money_max').text();
         $('.money_with:eq(0)').attr('value',max_money);

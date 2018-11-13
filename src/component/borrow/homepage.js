@@ -252,11 +252,37 @@ var chooseSalary={
                 //计算金额的显示
                 function moneyShow(){
 
+                    if(parentEleWidth - parseFloat(document.getElementsByClassName('green')[0].style.width) < 5){
+
+                        saveMoneyEle.innerHTML = document.getElementsByClassName('max')[0].innerHTML;
+
+                        return;
+
+                    }else if(parseFloat(document.getElementsByClassName('green')[0].style.width) < 5){
+
+                        saveMoneyEle.innerHTML = document.getElementsByClassName('min')[0].innerHTML;
+
+                    }
+
                     var showMoneyNum=(changeWidth/parentEleWidth*salaryTotal).toFixed(0);
 
                     var thisBalance=showMoneyNum%100;//取模
 
                     if(thisBalance>=50){//超过50，则加100,否则维持原来整数
+
+                        /*document.getElementsByClassName('max')[0].innerHTML
+
+
+
+                        parentEleWidth
+
+                        saveMoneyEle
+
+
+
+                        change*/
+
+
 
                         showMoneyNum=showMoneyNum-thisBalance+100;
                     }else {
