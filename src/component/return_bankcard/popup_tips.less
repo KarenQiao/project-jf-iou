@@ -1,0 +1,222 @@
+.borrow_money_tips {
+  width: 80%;
+  position: fixed;
+  top: 30%;
+  left: 10%;
+  z-index: 668;
+  display: none;
+
+  @media (max-width: 320px) {
+    top: 20%;
+  }
+
+}
+
+.popup_tips_plate {
+  width: 100%;
+  position: relative;
+  border-radius: 10px;
+  background-color: #ffffff;
+  padding: 10px 0;
+  &:after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 130px;
+    top: -92px;
+    left: 0;
+    background-image: url("../images/img_cloud_white.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+  .tp_p_box{
+    .tp_box_text{
+
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .tp_box_text:first-child{
+      margin-top: 8px;
+      letter-spacing: 2px;
+    }
+    .tp_box_text:last-child{
+      margin-bottom: 14px;
+      letter-spacing: 1px;
+    }
+  }
+
+
+}
+
+.borrow_money_title {
+  width: 100%;
+  margin-top: 35px;
+  text-align: center;
+
+}
+
+
+
+.popup_tips_title {
+  display: inline-block;
+  color: #e0b409;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 0 25px;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    left: 10px;
+    top: 40%;
+    border-radius: 10px;
+    background-color: #e0b409;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    right: 15px;
+    top: 40%;
+    border-radius: 10px;
+    background-color: #e0b409;
+
+  }
+
+}
+
+.tp_none{
+  padding: 0;
+  &:after,&:before{
+    content: none;
+  }
+}
+
+
+.popup_tips_close {
+  width: 100%;
+  margin-top: 50px;
+  text-align: center;
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+
+}
+
+.show_borrow_tips {
+
+  .selective_use_popup {
+    display: block;
+  }
+
+  .borrow_money_tips {
+    display: block;
+  }
+
+}
+
+
+
+//首页代还信用卡
+.homepage_popup_tips {
+  top: 35%;
+
+  .popup_tips_plate {
+    &:after {
+      background-image: url("../images/img_homepage_cloud.png");
+      height: calc(~"100vw/538*129");
+      top: -55px;
+
+      @media (min-width: 412px) {
+        top: -65px;
+        width: 100.2%;
+      }
+
+      @media (max-width: 360px) {
+        top: -65px;
+      }
+
+      @media (max-width: 320px) {
+        top: -50px;
+      }
+
+    }
+  }
+
+  .popup_tips_title {
+    margin-top: -10px;
+    z-index: 1;
+    letter-spacing: 2px;
+    font-weight: bold;
+
+    @media (max-width: 320px) {
+      letter-spacing: 0;
+    }
+
+  }
+
+  .borrow_money_details {
+    margin-top: -15px;
+    margin-bottom: 15px;
+
+    @media (max-width: 320px) {
+      margin-left: 35px;
+      margin-right: 15px;
+    }
+
+    li {
+      font-size: 14px;
+      font-weight: normal;
+
+      @media (max-width: 320px) {
+        font-size: 12px;
+      }
+
+    }
+  }
+
+}
+
+.tips_popup_font {
+  color: #ffb700;
+  font-size: 16px;
+
+  @media (max-width: 320px) {
+    font-size: 14px;
+  }
+
+}
+
+.popup_btn {
+  background-color: #24d291;
+  padding: 10px 0;
+  text-align: center;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 16px;
+  border: none;
+  width: 82%;
+  margin: 0 9%;
+  margin-bottom: 5px;
+
+  @media (max-width: 320px) {
+    font-size: 14px;
+    padding: 8px 0;
+  }
+
+}
+
+
+
+
+
+
+

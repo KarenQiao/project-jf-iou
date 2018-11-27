@@ -18,7 +18,7 @@
                     <div class="left">
                         <label>
                             <span>￥</span>
-                            <input class="money_with" type="number" pattern="[0-9]*" placeholder="请输入金额">
+                            <input class="money_with" onpaste="return false" oncontextmenu="return false" oncopy="return false" oncut="return false" type="number" pattern="[0-9]*" placeholder="请输入金额">
                         </label>
                     </div>
                     <div class="right">
@@ -36,8 +36,12 @@
         <div class="contact_info">
             <div>
                 <div class="borrow_show_tips">
-                    <div class="left">
+                    <div class="left no_width">
                         <span class="tittle_how">怎么借</span>
+                    </div>
+                    <!--嘉会员免息额度显示-->
+                    <div class="ticket_money"><img src="../../images/ticket_icon_white.png">
+                        <span>已免息<span>123.00</span></span>
                     </div>
                 </div>
 
@@ -61,7 +65,7 @@
 
                     <!--银行卡logo，及信息-->
                     <!--需要显示银行卡信息，在 a 标签里添加 class 值 show_card-->
-                    <a class="" href="card_list.html">
+                    <a class="bank_information" href="card_list.html">
                         <span class="flex_plate bank_select">
                         <span class="bank_icon_plate">
                             <img src="../../images/bank_icon/icon_bank_one.png">
@@ -69,7 +73,7 @@
                         <span class="bank_name_plate">
                             <span class="bank_font">收款信用卡</span>
 
-                            <span class="bank_font">建设银行[*3690]</span>
+                            <span class="bank_font">建设银行[*<span>3690</span>]</span>
                         </span>
                     </span>
                     </a>
@@ -276,11 +280,18 @@
 
         </div>
 
-        <div class="doing_bottom">
-            <div class="bottom_orange_btn">
+        <div class="agreement banker">
+            <label><input type="checkbox"  class="tate_y">我已经阅读并同意</label><a href="../borrow/agreement_borrow.html">《嘉白条服务协议》</a>
+        </div>
+
+        <div class="bank_doing_bottom">
+            <div class="bottom_orange_btn gray_button_background">
                 <a id="companyname_input">去还信用卡</a>
             </div>
         </div>
+
+
+
     </div>
 
 
@@ -299,6 +310,7 @@
                 </label>
 
                 <label class="input_list no_line phone_code unfind_flex">
+                    <p style="color: #ababab">验证码</p>
                     <input type="number" pattern="[0-9]*" oninput="if(value.length>6)value=value.slice(0,6)" placeholder="请输入验证码" class="identifying_code message_input">
 
                     <span class="code_send">获取验证码</span>
@@ -308,7 +320,7 @@
 
         <div class="doing_bottom">
             <div class="bottom_orange_btn">
-                <a href="apply_success_doing.html">下一步</a>
+                <a href="apply_success_doing.html">确认提交</a>
             </div>
         </div>
     </div>
@@ -321,7 +333,7 @@
 
 <script>
 
-    addEventListener('load',showChooseBox,false)
+    addEventListener('load',showBankCard,false)
 
     //点击选分期，分期无法选中，弹出小提示
     var clickTips=document.getElementsByClassName('gray_nochecked');
@@ -337,7 +349,7 @@
     }
 
 
-    /*弹框*/
+    /*规则说明-弹框*/
     document.getElementsByClassName('how_all')[0].addEventListener('click',function(){
 
         jfShowTips.dialogShow({
@@ -353,6 +365,59 @@
 
     },false)
 
+    /*确认放弃优惠券-弹框*/
+    document.getElementsByClassName('bottom_orange_btn')[0].addEventListener('click',function(){
+
+        jfShowTips.dialogShow({
+            "mainText": "放弃使用优惠券？",
+            "minText": "<p style='display: none;'>放弃使用优惠券？</p>",
+            "noCheck": false,
+            "noCancel": false,
+            "cancleBtnText":"不放弃",
+            "checkBtnText":"放弃",
+            "checkFn": function () {
+                jfShowTips.dialogRemove()
+
+                document.activeElement.blur();
+
+                setTimeout(function(){
+
+                    jfFrameFlyShow.mainFrameShow({
+                        "flyTime": "0.3s",//侧拉飞入平滑时间
+
+                        "flyEleArea": "search_company_name",//侧拉飞入的元素class选择器
+
+                        "hideButton": "goback",//侧拉返回关闭按钮的class选择器
+
+                        hideFn: function () {
+
+                            window.history.back();
+                        }
+                    })
+
+                },300)
+
+            },
+            "noCheckFn":function () {
+
+
+            }
+        });
+
+    },false)
+    /*//loading动画,10s后会自动移除
+    jfShowTips.loadingShow({
+        "text":"<span class='bank_card_lod_text'>请先完成提额认证<!--<span>跳转中</span>--></span>"
+    })
+
+    setTimeout(function(){
+
+        jfShowTips.loadingRemove(); //loading动画
+
+
+        window.location.href="../certification/main.html"
+
+    },20000)*/
     $(document).ready(function(){
         var max_money = $('#borrow_money_max').text();
         $('.money_with:eq(0)').attr('value',max_money);
@@ -604,8 +669,8 @@
         }
     }
 
-    //点击侧滑选择企业名称
-    $('#companyname_input').on('click', function () {
+    //点击侧滑选择企业名称  #companyname_input
+ /*   $('.dialog_cancel').on('click', function () {
 
         document.activeElement.blur();
 
@@ -627,6 +692,37 @@
         },300)
 
     });
+*/
+
+    //同意服务协议
+    function checkedService() {
+
+        //window.onload=function () {
+
+        // document.getElementsByClassName('bottom_btn')[0].className = 'bottom_btn gray_button_background';
+
+        var clickText=document.getElementsByClassName('agreement')[0].getElementsByTagName('label')[0];
+
+        clickText.addEventListener('click',function () {
+
+            var checkedBorrow=document.getElementsByClassName('tate_y')[0];
+
+            if (checkedBorrow.checked ==true) {
+
+                document.getElementsByClassName('bottom_orange_btn ')[0].className = 'bottom_orange_btn ';
+
+            }else {
+
+                document.getElementsByClassName('bottom_orange_btn ')[0].className = 'bottom_orange_btn gray_button_background';
+
+            }
+        },false)
+
+        // }
+
+    }
+
+    checkedService();
 
 
     //获取验证码倒计时
@@ -646,6 +742,8 @@
             }
         },1000)
     });
+
+
 
 
 </script>

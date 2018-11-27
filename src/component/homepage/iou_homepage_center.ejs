@@ -21,7 +21,7 @@
     <!---->
 
     <!------------还款-------------------->
-    <div class="white_stripes_plate">
+    <div class="white_stripes_plate show_top">
 
         <a class="center_plate" href="../return/return.html">
 
@@ -81,17 +81,32 @@
 
         </div>
 
+
     </div>
 
-    <!------------banner入口------------>
-    <a class="banner_in" href="../in_show/in_show.html">
-        <!--这里是放banner入口图的地方-->
-        <img src="../../images/入口banner.jpg">
 
-    </a>
+    <!------------打白条----------添加banner后需添加“show_top”清除间隔---------->
+    <div class="white_stripes_plate ">
 
-    <!------------打白条-------------------->
-    <div class="white_stripes_plate show_top">
+
+        <!--嘉会员优惠券-->
+        <!----隐藏立即使用添加class值：“wait”---->
+        <div class="ticket_info ">
+            <div>
+                <img src="../../images/ticket_icon.png">
+            </div>
+            <div>
+                <p>5000元代还信用卡，3期免费用</p>
+                <p><span>08-14<span>到</span>08-21<span>可用</span></span><span class="rule">规则</span></p>
+            </div>
+            <a href="../return_bankcard/bank_card.html">立即使用</a>
+        </div>
+
+        <!----------banner入口---------->
+         <a  class="banner_in" href="#">
+             <!--这里是放banner入口图的地方-->
+             <img src="../../images/banner_8.png" >
+         </a>
 
         <div class="top_plate">
 
@@ -107,7 +122,7 @@
                 <div class="left_img">
                     <img src="../../images/white_stripes/take_now.png">
                 </div>
-
+                <!--推荐：“hot_select”,手机认证专享：“vip_choose”，员工专享：“staff_choose”-->
                 <div class="left_img hot_select">
                     <p>借钱</p>
 
@@ -118,14 +133,14 @@
 
 
             <!--即将上线，添加class值coming_soon-->
-            <a class="left_img_font coming_soon">
+            <a class="left_img_font " href="../return_bankcard/bank_card.html">
 
                 <div class="left_img">
                     <img src="../../images/white_stripes/credit_card_payment.png">
                 </div>
-
+                <!--推荐：“hot_select”,手机认证专享：“vip_choose”，员工专享：“staff_choose”-->
                 <div class="left_img">
-                    <p>还信用卡</p>
+                    <p>代还信用卡</p>
 
                     <p>信用卡分期还</p>
                 </div>
@@ -137,8 +152,8 @@
                 <div class="left_img">
                     <img src="../../images/white_stripes/installment_consumption.png">
                 </div>
-
-                <div class="left_img vip_choose ">
+                <!--推荐：“hot_select”,手机认证专享：“vip_choose”，员工专享：“staff_choose”-->
+                <div class="left_img staff_choose ">
                     <p>购物</p>
 
                     <p>商城分期购物</p>
@@ -149,7 +164,6 @@
         </div>
 
     </div>
-
     <!------------账单-------------------->
     <div class="white_stripes_plate">
 
@@ -191,25 +205,25 @@
 
 </div>
 
+<script>
 
+    /*优惠券规则-弹框*/
+    document.getElementsByClassName('rule')[0].addEventListener('click',function(){
 
+        jfShowTips.dialogShow({
+            "mainText": "使用规则",
+            "minText": "<ul class='boom_text_all'>" +
+            "               <li class='boom_text'>需要满足嘉白条代还信用卡使用规则</li>" +
+            "               <li class='boom_text'>借款金额小于等于免息券限制的金额</li>" +
+            "               <li class='boom_text'>分期期数等于免息券限制的期数</li>" +
+            "               <li class='boom_text'>满足嘉会员的用券规则</li>" +
+            "               <li class='boom_text'>最终解释权归嘉会员和嘉白条所有</li>" +
+            "           </ul>",
+            "noCheck": true,
+            "noCancel": false,
+            "cancleBtnText":"知道了",
+            "checkBtnText":"",
+        });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    },false)
+</script>

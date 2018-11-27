@@ -13,7 +13,7 @@ function monthTime() {
 
 }
 
-function showChooseBox() {
+function showBankCard() {
 
     var takeNow = document.getElementsByClassName('repayment_plan')[0]; //还款计划
 
@@ -68,8 +68,9 @@ function showChooseBox() {
         },false)
 
     }
+}
 
-    //选择月份，关闭弹窗
+    /*//选择月份，关闭弹窗
     var selectMonth = document.getElementsByClassName('month_time');
 
     for (var i=0;i<selectMonth.length;i++) {
@@ -84,4 +85,4 @@ function showChooseBox() {
 
 }
 
-
+*/

@@ -152,12 +152,41 @@
         border-bottom-right-radius: 10px;
       }
     }
+
     .how_fonts{
       margin-left: 2%;
       margin-top: 5px;
       font-size: 14px;
       color: #ababab;
     }
+  }
+  .no_width{
+    width:50%;
+  }
+  //嘉会员免息额度显示
+  .ticket_money{
+    //width: 45%;
+    padding: 3px 6px;
+    box-sizing: content-box;
+    border-radius: 4px;
+    background: -webkit-linear-gradient(right, #ff9600, #ff7800);
+    background: linear-gradient(right, #ff9600,#ff7800);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    opacity: .8;
+    img{
+      width: 20px;
+      height: 20px;
+      margin-right: 6px;
+    }
+    span{
+      font-size: 14px;
+      color: #ffffff;
+      white-space: nowrap;
+      //padding: 0 2px;
+    }
+
   }
   .right{
     width: 30%;
@@ -186,6 +215,7 @@
 
 .borrow_list_font {
   color: #f39800;
+  //color: #4fba9c;
 }
 
 .card_select {
@@ -348,9 +378,11 @@
 .message_input {
   padding: 5px 10px;
   font-size: 14px;
-  border-radius: 5px;
-  border: 1px #eee solid;
+  //border-radius: 5px;
+  //border: 1px #eee solid;
   width: 50%;
+  border: none;
+  border-bottom: 1px solid #cccccc;
 }
 
 .tel_input {
@@ -400,4 +432,91 @@
 
 .unfind_flex {
   justify-content: space-between!important;
+}
+
+
+.next_corner {
+  &:before {
+    content: "";
+    position: absolute;
+    right: 2px;
+    top: 24px;
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-top: solid 1px #ababab;
+    border-right: solid 1px #ababab;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+
+.bank_information {
+  width: 100%;
+}
+
+/*开发样式重叠，单拉出来复制样式*/
+.bank_doing_bottom {
+  margin-top: 45px;
+
+  @media screen and(max-width: 370px){
+
+    margin-top:15px
+  ;
+  }
+
+  .bottom_orange_btn {
+    width: 90%;
+    margin: 5px auto;
+    padding-bottom: 10px;
+    a {
+      width: 100%;
+      display: block;
+      height: 50px;
+      background: linear-gradient(left, #ffb700, #ff7800);
+      color: #ffffff;
+      border-radius: 50px;
+      font-size: 18px;
+      text-align: center;
+      line-height: 50px;
+      margin: 0 auto;
+
+      &:active {
+        opacity: 0.6;
+      }
+    }
+
+  }
+  .gray_button_background{
+    a{
+      background: -webkit-linear-gradient(left, #dddddd, #dddddd);
+      background: linear-gradient(left, #dddddd, #dddddd);
+    }
+  }
+}
+
+/*底部确认协议*/
+.banker{
+  input:checked:after{
+    border-bottom: solid 1px #ffb700;
+    border-right: solid 1px #ffb700;
+  }
+  a{
+    color: #ffb700;
+  }
+}
+
+
+
+/*loding文字*/
+.bank_card_lod_text{
+  width: 100%;
+  display: inline-block;
+  @media screen and (max-width: 320px){
+    font-size: 12px;
+  }
+  span{
+    display: block;
+  }
 }
