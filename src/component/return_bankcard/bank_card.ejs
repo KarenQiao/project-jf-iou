@@ -743,22 +743,22 @@
         },1000)
     });
 
-    //待还款超限，请还款后再借
+/*    //待还款超限，请还款后再借
     jfShowTips.dialogShow({
         "mainText":' ',
-        "minText":'<p style="color: #4a4a4a; font-size: 16px; text-align: center;">待还款超限，请还款后再借！</p>',
+        "minText":'<p class="tip_min_text">待还款超限，请还款后再借！</p>',
         "noCheck": false,
         "noCancel": true,
         "checkBtnText":"返回",
         "checkFn": function () {
             jfShowTips.dialogRemove()
         }
-    })
+    })*/
 
     //放弃/继续借钱
     jfShowTips.dialogShow({
         "mainText":' ',
-        "minText":'<p style="color: #4a4a4a; font-size: 16px; text-align: center;">待还款过多，本次只能借</p><p style="color: #4fba9c; font-weight: bold; font-size: 22px; text-align: center;">3000</p>',
+        "minText":'<p class="tip_min_text">待还款过多，本次只能借</p><p class="tip_min_textBold">3000.00</p>',
         "noCheck": false,
         "noCancel": false,
         "cancleBtnText":"放弃借钱",
