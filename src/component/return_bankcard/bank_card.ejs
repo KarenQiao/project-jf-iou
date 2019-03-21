@@ -768,7 +768,18 @@
         }
     })
 
+    //选择月份，关闭弹窗
+    var selectMonth = document.getElementsByClassName('month_time');
 
+    for (var i=0;i<selectMonth.length;i++) {
+
+        selectMonth[i].addEventListener('click',function () {
+
+          $('.borrow_time ').removeClass('popup_use_block');
+
+        })
+
+    }-
 
 
 </script>

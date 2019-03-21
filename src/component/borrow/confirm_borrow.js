@@ -71,29 +71,29 @@ function myPlan() {
 }
 
 //同意服务协议
-function checkedService() {
-
-    //window.onload=function () {
-
-       // document.getElementsByClassName('bottom_btn')[0].className = 'bottom_btn gray_button_background';
-
-        var clickText=document.getElementsByClassName('agreement')[0].getElementsByTagName('label')[0];
-
-        clickText.addEventListener('click',function () {
-
-            var checkedBorrow=document.getElementsByClassName('tate_y')[0];
-
-            if (checkedBorrow.checked ==true) {
-
-                document.getElementsByClassName('ag_yellow_borrow_btn ')[0].className = 'ag_yellow_borrow_btn ';
-
-            }else {
-
-                document.getElementsByClassName('ag_yellow_borrow_btn ')[0].className = 'ag_yellow_borrow_btn gray_button_background';
-
-            }
-        },false)
-
-   // }
-
-}
+// function checkedService() {
+//
+//     //window.onload=function () {
+//
+//        // document.getElementsByClassName('bottom_btn')[0].className = 'bottom_btn gray_button_background';
+//
+//         var clickText=document.getElementsByClassName('agreement')[0].getElementsByTagName('label')[0];
+//
+//         clickText.addEventListener('click',function () {
+//
+//             var checkedBorrow=document.getElementsByClassName('tate_y')[0];
+//
+//             if (checkedBorrow.checked ==true) {
+//
+//                 document.getElementsByClassName('ag_yellow_borrow_btn ')[0].className = 'ag_yellow_borrow_btn ';
+//
+//             }else {
+//
+//                 document.getElementsByClassName('ag_yellow_borrow_btn ')[0].className = 'ag_yellow_borrow_btn gray_button_background';
+//
+//             }
+//         },false)
+//
+//    // }
+//
+// }
