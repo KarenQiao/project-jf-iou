@@ -1,386 +1,74 @@
 /*****************************/
 /**************首页中心部分************/
 .iou_homepage_center {
-  //嘉会员优惠券
-  .ticket_info{
-    font-size: 0;
-    box-sizing: border-box;
-    background-color: #ffffff;
-    width: 100%;
-    padding: 10px 0;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    position: relative;
-    &:after{
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      transform: scaley(0.3);
-      background-color: #e5e5e5;
-      //border-bottom: 1px solid #e5e5e5;
-    }
-    div:first-child{
-      //padding-right: 20px;
-      //width: 25%;
-      img{
-        width: 34px;
-        height: 34px;
-        margin:0 25px 0 20px;
-        @media screen and (max-width: 320px){
-          width: 32px;
-          height: 32px;
-        }
-      }
-    }
-    div:nth-child(2){
-      font-size: 13px;
-      @media screen and (max-width: 320px){
-        font-size: 12px;
-      }
-      flex: 1;
-      p{
-        //display: inline-block;
-        span>span{
-          margin: 0 4px;
-        }
-      }
-      .rule{
-        color: #ffb700;
-        padding:5px 20px 5px 30px;
-        @media screen and (max-width: 320px){
-          padding-left: 15px;
-        }
-      }
-    }
-    a{
-      display: block;
-      background-color: #ffb700;
-      padding: 2px 8px;
-      border-radius: 50px;
-      margin-right: 15px;
-      font-size: 14px;
-      box-sizing: border-box;
-      color: #ffffff;
-      white-space: nowrap;
-      @media screen and (max-width: 320px){
-        font-size: 12px;
-        padding: 1px 5px;
-      }
-    }
-  }
-
-  .wait{
-    a{
-      display: none;
-    }
-  }
-
-  //首页入口banner图
-  .banner_in{
-    display: block;
-    /*margin:5px 1.5% ;*/
-    img{
-      /*border-radius: 5px;
-      box-shadow: 0 2px 5px 0 #ebebeb;*/
-      width: 100%;
-      height: 18%;
-      height: calc(~"100vw / 750 * 240");
-    }
-  }
-
-
-
-
-
-  .center_plate {
-
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    background-color: #ffffff;
-
-    &:active {
-
-      opacity: .60;
-
-    }
-
-    .repayment_plate {
-
-      width: 50%;
-      display: flex;
-      align-items: center;
-      padding: 6px 0;
-
-      @media screen and(min-width: 414px) {
-
-        padding: 10px 0;
-
-      }
-
-      @media screen and(max-width: 320px) {
-
-        &:nth-child(1) {
-
-          .repayment_left_img {
-
-            width: 45%;
-
-          }
-
-        }
-
-      }
-
-      .repayment_left_img {
-
-        width: 50%;
-        background-color: #ffffff;
-
-        img {
-
-          width: 35px;
-          height: 35px;
-          padding-left: 40%;
-
-          @media screen and(max-width: 320px) {
-
-            width: 35px;
-            height: 35px;
-
-          }
-
-        }
-
-        p {
-
-          color: #4a4a4a;
-          font-size: 16px;
-
-          @media screen and(max-width: 320px) {
-
-            font-size: 14px;
-
-          }
-
-        }
-
-      }
-
-      .repayment_right_img {
-
-        width: 40%;
-        background-color: #ffffff;
-
-        img {
-
-          width: 20px;
-          height: 20px;
-          padding-left:60%;
-
-          @media screen and(min-width: 414px) {
-
-            width: 24px;
-            height: 24px;
-
-          }
-
-        }
-
-      }
-
-      .repayment_right_font {
-
-        width: 35%;
-        background-color: #ffffff;
-
-        p {
-
-          font-size: 12px;
-          color: #ffc82a;
-
-          @media screen and(min-width: 414px) {
-
-            font-size: 14px;
-
-          }
-
-        }
-
-      }
-
-    }
-
-    .left_arrow_plate {
-
-      width: 20%;
-      background-color: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-
-
-
-      .left_arrow {
-
-        width: 10px;
-        height: 10px;
-        position: relative;
-
-        &:after {
-
-          content: '';
-          position: absolute;
-          width: 10px;
-          height: 10px;
-          border-right: 2px #4a4a4a solid;
-          border-bottom: 2px #4a4a4a solid;
-          transform: rotate(-45deg);
-
-        }
-
-      }
-
-
-
-    }
-
-  }
-  .repayment_money {
-
-    width: 100%;
-    position: relative;
-    background-color: #ffffff;
-    padding: 6px 0;
-
-    @media screen and(min-width: 414px) {
-
-      padding: 10px 0;
-
-    }
-
-    @media screen and(min-width: 750px) {
-
-      padding: 12px 0;
-
-    }
-
-    &:before {
-
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 1px;
-      top: 0;
-      left: 0;
-      transform: scaley(0.3);
-      border-top: 1px #e5e5e5 solid;
-
-    }
-
-    .repayment_money_fonts {
-
-      width: 75%;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-
-      p {
-
-        font-size: 14px;
-        color: #7b7b7b;
-
-        @media screen and(max-width: 320px) {
-
-          font-size: 12px;
-
-        }
-
-        span {
-
-          &:nth-child(1) {
-
-            padding-right: 10px;
-
-          }
-
-        }
-
-      }
-
-    }
-
-  }
-
 
   /*********打白条********/
 
 
   .white_stripes_plate {
-
     width: 100%;
     margin-top: 10px;
     box-shadow: 0 2px 5px 0 #ebebeb;
 
 
     &:last-child{
-      .take_now_plate .left_img_font:nth-child(odd):after{
+      .take_now_plate .left_staff_img:nth-child(odd):after{
         content:'';
         display: block;
         border-bottom: none;
       }
     }
 
-    .top_plate {
+    .top_plates {
 
       background-color: #ffffff;
-      width: 100%;
+      //width: 100%;
       padding: 6px 0;
       position: relative;
+      border-bottom: 1px #e5e5e5 solid;
 
       &:before {
 
         position: absolute;
         content: '';
-        width: 100%;
-        height: 1px;
-        bottom: 0;
-        left: 0;
-        transform: scaley(0.3);
-        border-bottom: 1px #e5e5e5 solid;
+        background-image: url("../../images/white_stripes/credit_card.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        width: 15px;
+        height: 15px;
+        top: 10px;
+        left: 15px;
+      }
+
+      @media screen and(min-width: 320px) {
+
+        padding: 6px 5px 6px 5px;
+
+        p{
+          line-height: 24px;
+        }
+
+      }
+
+      @media screen and(min-width: 360px) {
+
+        padding: 6px 5px 6px 5px;
+
+        p{
+          line-height: 22px;
+        }
 
       }
 
       @media screen and(min-width: 414px) {
 
-        padding: 10px 0;
+        padding: 6px 0;
 
       }
 
       @media screen and(min-width: 750px) {
 
-        padding: 12px 0;
-
-      }
-
-      &:after {
-
-        content: '';
-        position: absolute;
-        width: 4px;
-        height: 15px;
-        background-color: #4fba9c;
-        left: 5%;
-        top: 26%;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
+        padding: 6px 0;
 
       }
 
@@ -389,7 +77,6 @@
         font-size: 14px;
         color: #7b7b7b;
         padding-left: 10%;
-
       }
 
     }
@@ -404,8 +91,8 @@
 
 
 
-      .left_img_font {
-        width: 50%;
+      .left_staff_img {
+        width: 100%;
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -426,13 +113,12 @@
                 content: '';
                 display: block;
                 position: absolute;
-                top: 10px;
+                top: 20px;
                 left: 15px;
-                width: 50px;
-                height: 50px;
-                background: url("../images/white_stripes/consumption_popup.png")center no-repeat;
+                width: 20px;
+                height: 20px;
+                background: url("../../images/white_stripes/consumption_popup.png")center no-repeat;
                 background-size: 100%;
-
 
               }
             }
@@ -447,16 +133,27 @@
 
         }
 
+        .left_staff_img{
+          width: 100%;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          flex-flow: row wrap;
+          position: relative;
+          background-color: #ffffff;
+        }
+
+
         &:nth-child(even){
           &:after{
             position: absolute;
             content: '';
-            width: 100%;
+            width: 80%;
             height: 1px;
             bottom: 0;
-            left: 0;
-            transform: scaley(0.3);
-            border-bottom: 1px #e5e5e5 solid;
+            left: 20%;
+            border-bottom: 1px #eee solid;
+
           }
 
           &:last-child:after{
@@ -470,32 +167,17 @@
           &:after{
             position: absolute;
             content: '';
-            width: 100%;
+            width: 80%;
             height: 1px;
             bottom: 0;
-            left: 0;
-            transform: scaley(0.3);
-            border-bottom: 1px #e5e5e5 solid;
+            left: 20%;
+            border-bottom: 1px #eee solid;
           }
 
           &:last-child:after{
             content: '';
             border-bottom: none;
           }
-
-          &:before {
-
-            position: absolute;
-            content: '';
-            width: 1px;
-            height: 100%;
-            top: 0;
-            right: 0;
-            transform: scalex(0.3);
-            border-right: 1px #e5e5e5 solid;
-
-          }
-
 
         }
 
@@ -512,8 +194,13 @@
           }
 
           &:last-child{
-            width: 50%;
             flex-grow: 1;
+            width: 75%;
+            height: 50px;
+            padding: 12px 0 10px 0;
+            overflow: hidden;
+            //border-bottom: 1px solid #e5e5e5;
+
 
             p {
 
@@ -522,7 +209,7 @@
                 color: #4a4a4a;
                 font-size: 16px;
                 padding-right: 10px;
-                line-height: 28px;
+                line-height: 24px;
 
                 @media screen and(max-width: 320px) {
 
@@ -554,6 +241,7 @@
 
 
           }
+
         }
 
 
@@ -567,6 +255,28 @@
     margin-top: 0;
   }
 
+}
+
+//还款
+
+.left_staff_word{
+  .left_staff{
+    width: 40px;
+  }
+  .left_choose{
+    line-height: 40px;
+    padding-right: 50px;
+    overflow: hidden;
+    .choose_word{
+      float: right;
+      color: #ff7200;
+    }
+  }
+  .left_imgs{
+    flex-grow: 1;
+    width: 75%;
+    overflow: hidden;
+  }
 }
 
 
@@ -627,4 +337,119 @@
   box-sizing: border-box;
 }
 
+.right_select {
+  position: relative;
 
+  &:after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-image: url("../../images/white_stripes/credit_arrow.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    z-index: 10;
+    top: 25px;
+    right: 20px;
+  }
+  .right_pic {
+    width: 20px;
+    height: 20px;
+    background-image: url("../../images/white_stripes/credit_arrow.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    z-index: 10;
+    top: 25px;
+    right: 20px;
+  }
+
+}
+
+
+  .pay_select {
+    position: relative;
+    &:before {
+      content: "已逾期";
+      font-size: 12px;
+      color: white;
+      position: absolute;
+      line-height: 16px;
+      z-index: 10;
+      top: 27px;
+      right: 50px;
+      width: 50px;
+      height: 16px;
+      padding: 0 5px;
+      text-align: right;
+      background-color: #ff7200;
+      border-radius: 3px;
+    }
+
+    &:after{
+      position: absolute;
+      top: 27px;
+      right: 92px;
+      background-image: url("../../images/white_stripes/credit_card_paytwo.png");
+      width: 15px;
+      height: 15px;
+      background-color: #ff7200;
+      background-size: 100%;
+      border-radius: 3px;
+      z-index: 33;
+    }
+  }
+  .pay_select_one {
+    position: relative;
+    &:before {
+      content: "已还清";
+      font-size: 12px;
+      color: white;
+      position: absolute;
+      line-height: 16px;
+      z-index: 10;
+      top: 27px;
+      right: 50px;
+      width: 50px;
+      height: 16px;
+      padding: 0 5px;
+      text-align: right;
+      background-color: #53b678;
+      border-radius: 3px;
+    }
+
+    &:after{
+      position: absolute;
+      top: 27px;
+      right: 92px;
+      width: 15px;
+      height: 15px;
+      background-color: #53b678;
+      border-radius: 3px;
+      z-index: 33;
+      background-image: url("../../images/white_stripes/credit_card_payone.png");
+      background-size: 100%;
+    }
+  }
+
+.right_select_list {
+  position: relative;
+  &:after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-image: url("../../images/white_stripes/credit_arrow.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    z-index: 10;
+    top: 25px;
+    right: 20px;
+  }
+  p{
+    margin-top: 13px;
+  }
+}
+.right_line{
+  border-bottom: 1px solid #eee;
+}
